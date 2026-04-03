@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import Sidebar from './components/Sidebar';
+import { ArrowDown } from 'lucide-react';
+import doodleStars from './assets/doodle-stars.png';
+import shining from './assets/shining.png';
+import star2 from './assets/star (2).png';
 import './App.css';
 
 function App() {
@@ -19,7 +23,7 @@ function App() {
       },
       {
         root: null,
-        rootMargin: '-40% 0px -60% 0px', // Triggers when element crosses 40% from top
+        rootMargin: '-40% 0px -60% 0px', // triggers when element crosses 40% from top
       }
     );
 
@@ -53,10 +57,53 @@ function App() {
         <section
           id="home"
           ref={(el) => (sectionRefs.current['home'] = el)}
-          className="page-section"
+          className="page-section home-section"
         >
-          <h1>Home Section</h1>
-          <p>Welcome to my workspace</p>
+          {/* Background Doodles */}
+          <img src={shining} className="doodle doodle-shining" alt="" aria-hidden="true" />
+          <img src={doodleStars} className="doodle doodle-stars" alt="" aria-hidden="true" />
+          <img src={star2} className="doodle doodle-star-2" alt="" aria-hidden="true" />
+
+          <div className="home-content">
+            <div className="avatar-container">
+              <img src="/src/assets/me.jpg" alt="Faiza Anjum" className="avatar" />
+            </div>
+            <div className="home-info">
+              <h1 className="home-name">Faiza Anjum</h1>
+              <p className="home-subtitle">
+                Frontend Developer <span className="dot">•</span> CS Student <span className="dot">•</span> Full Stack intern
+              </p>
+              
+              <div className="home-intro">
+                <p>Hi there! I'm Faiza Anjum, a Frontend Developer focused on building intuitive and responsive web applications.</p>
+                <p>I’m currently working towards becoming a full stack developer, with an interest in clean UI and practical solutions.</p>
+              </div>
+
+              <div className="home-actions">
+                <button 
+                  className="btn-primary"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View Projects <ArrowDown size={14} />
+                </button>
+                <a 
+                  href="/src/assets/Faiza_Anjum.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-secondary"
+                  style={{ textDecoration: 'none' }}
+                >
+                  Download Resume <ArrowDown size={14} />
+                </a>
+              </div>
+
+              <div className="home-skills">
+                {['Java', 'React JS', 'SQL', 'Web developement', 'Figma'].map(skill => (
+                  <span key={skill} className="skill-tag">{skill}</span>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
         <section

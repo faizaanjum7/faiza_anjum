@@ -38,7 +38,7 @@ const Sidebar = ({ isDarkMode, toggleDarkMode, activeSection }) => {
     <aside className={`sidebar ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebar-header">
         {!isCollapsed && (
-          <span className="workspace-name">Faiza's Space</span>
+          <span className="workspace-name">Faiza's Archive</span>
         )}
 
         <button
@@ -59,9 +59,8 @@ const Sidebar = ({ isDarkMode, toggleDarkMode, activeSection }) => {
           {navItems.map((item) => (
             <li key={item.id}>
               <button
-                className={`nav-item ${
-                  activeSection === item.id ? 'active' : ''
-                }`}
+                className={`nav-item ${activeSection === item.id ? 'active' : ''
+                  }`}
                 onClick={() => handleScroll(item.id)}
                 aria-label={`Go to ${item.name}`}
               >
