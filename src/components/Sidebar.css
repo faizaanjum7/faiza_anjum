@@ -22,6 +22,7 @@
   align-items: center;
   justify-content: space-between;
   height: 60px;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .workspace-name {
@@ -52,6 +53,10 @@
   padding: 8px;
 }
 
+.sidebar-nav li {
+  width: 100%;
+}
+
 .sidebar-nav ul {
   display: flex;
   flex-direction: column;
@@ -66,8 +71,12 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   white-space: nowrap;
+  width: 100%;          
+  background: none;     
+  border: none;        
+  text-align: left;
 }
 
 .nav-item:hover,
@@ -86,6 +95,13 @@
 .nav-text {
   font-size: 14px;
   font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.nav-item.active .nav-text,
+.nav-item:hover .nav-text {
+  color: var(--text-primary);
 }
 
 .sidebar-footer {
@@ -108,7 +124,7 @@
   background-color: var(--hover-bg);
 }
 
-/* Mobile responsive */
+/* mobile responsive */
 @media (max-width: 768px) {
   .sidebar {
     position: fixed;
