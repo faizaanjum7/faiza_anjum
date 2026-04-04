@@ -5,6 +5,8 @@ export const projectsData = [
     description: "Personal portfolio built using React, focusing on interactive UI, animation-driven design, and enhanced user experience.",
     tags: ["React", "Frontend"],
     color: "#e6eaf5",
+    imageLight: "/src/assets/personal_portfolio_light.webp",
+    imageDark: "/src/assets/personal_portfolio_dark.webp",
     githubLink: "#",
     liveLink: "#",
     details: {
@@ -27,6 +29,8 @@ export const projectsData = [
     description: "Full-stack hospital management system designed to manage patients, appointments, and hospital workflows.",
     tags: ["React", "Node.js", "Firebase", "Team Lead"],
     color: "#e8f4ec",
+    imageLight: "/src/assets/shms_light.webp",
+    imageDark: "/src/assets/shms_dark.webp",
     githubLink: "#",
     liveLink: "#",
     details: {
@@ -52,6 +56,8 @@ export const projectsData = [
     description: "Learning management system designed for structured learning, personalized content delivery, and real-world usability.",
     tags: ["React", "Next.js", "AI", "Figma"],
     color: "#f6ede4",
+    imageLight: "/src/assets/lms_light.webp",
+    imageDark: "/src/assets/lms_dark.webp",
     githubLink: "#",
     liveLink: "#",
     details: {
@@ -77,6 +83,8 @@ export const projectsData = [
     description: "Official event website developed to showcase speakers, theme, and event flow with a focus on responsive and engaging design.",
     tags: ["HTML", "CSS", "JS"],
     color: "#eedbee",
+    imageLight: "/src/assets/tedxgprec.webp",
+    imageDark: "/src/assets/tedxgprec.webp",
     githubLink: "#",
     liveLink: "#",
     details: {
@@ -99,6 +107,8 @@ export const projectsData = [
     description: "Productivity application combining a customizable pomodoro timer with task management for structured work sessions.",
     tags: ["React", "LocalStorage"],
     color: "#f3e8e8",
+    imageLight: "/src/assets/pomodoro_2.webp",
+    imageDark: "/src/assets/pomodoro_1.webp",
     githubLink: "#",
     liveLink: "#",
     details: {
@@ -122,6 +132,8 @@ export const projectsData = [
     description: "AI-assisted productivity application designed to generate structured or flexible daily workflows based on user input.",
     tags: ["React", "TypeScript", "AI"],
     color: "#e2f2f2",
+    imageLight: "/src/assets/skylar_light.webp",
+    imageDark: "/src/assets/skylar_dark.webp",
     githubLink: "#",
     liveLink: "#",
     details: {
@@ -145,6 +157,8 @@ export const projectsData = [
     description: "Minimal portfolio inspired by Notion, focused on structured content and professional presentation.",
     tags: ["React", "CSS"],
     color: "#e6eaf5",
+    imageLight: null,
+    imageDark: null,
     githubLink: "#",
     liveLink: "#",
     details: {
@@ -162,6 +176,8 @@ export const projectsData = [
     description: "Web-based application form built to handle user inputs with validation and interactive elements.",
     tags: ["HTML", "CSS", "JS"],
     color: "#e8f4ec",
+    imageLight: "/src/assets/jobapplication.webp",
+    imageDark: "/src/assets/jobapplication.webp",
     githubLink: "#",
     liveLink: "#",
     details: {
@@ -184,6 +200,8 @@ export const projectsData = [
     description: "Static resume website focused on clean layout and structured content presentation.",
     tags: ["HTML", "CSS"],
     color: "#f6ede4",
+    imageLight: "/src/assets/resume.webp",
+    imageDark: "/src/assets/resume.webp",
     githubLink: "#",
     liveLink: "#",
     details: {

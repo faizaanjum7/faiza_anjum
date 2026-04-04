@@ -212,7 +212,15 @@ function App() {
           <div className="projects-grid">
             {filteredProjects.map(project => (
               <div key={project.id} className="project-card" onClick={() => setSelectedProject(project)}>
-                <div className="project-card-top" style={{ backgroundColor: project.color }}></div>
+                <div className="project-card-top" style={{ backgroundColor: project.color }}>
+                  {(project.imageLight || project.imageDark) && (
+                    <img 
+                      src={isDarkMode ? (project.imageDark || project.imageLight) : (project.imageLight || project.imageDark)} 
+                      alt={project.title} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    />
+                  )}
+                </div>
                 <div className="project-card-bottom">
                   <h3>{project.title}</h3>
                   <p className="project-card-desc">{project.description}</p>
@@ -268,7 +276,15 @@ function App() {
       {selectedProject && (
         <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
           <div className="modal-content project-modal-container" onClick={(e) => e.stopPropagation()}>
-            <div className="project-modal-hero" style={{ backgroundColor: selectedProject.color }}></div>
+            <div className="project-modal-hero" style={{ backgroundColor: selectedProject.color }}>
+              {(selectedProject.imageLight || selectedProject.imageDark) && (
+                <img 
+                  src={isDarkMode ? (selectedProject.imageDark || selectedProject.imageLight) : (selectedProject.imageLight || selectedProject.imageDark)} 
+                  alt={selectedProject.title} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                />
+              )}
+            </div>
             <div className="project-modal-body">
               <div className="project-modal-header">
                 <h2>{selectedProject.title}</h2>
