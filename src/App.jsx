@@ -4,6 +4,7 @@ import { ArrowDown, ChevronRight, X } from 'lucide-react';
 import doodleStars from './assets/doodle-stars.png';
 import shining from './assets/shining.png';
 import star2 from './assets/star (2).png';
+import { projectsData } from './data/projects';
 import './App.css';
 
 const ToggleBlock = ({ title, children, defaultOpen = false }) => {
@@ -28,8 +29,15 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isSkyModalOpen, setIsSkyModalOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const sectionRefs = useRef({});
+
+  const filteredProjects = projectsData.filter(project => {
+    if (activeFilter === 'All') return true;
+    return project.tags.some(tag => tag.toLowerCase() === activeFilter.toLowerCase());
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -181,10 +189,42 @@ function App() {
         <section
           id="projects"
           ref={(el) => (sectionRefs.current['projects'] = el)}
-          className="page-section"
+          className="page-section projects-section"
         >
-          <h1>Projects Section</h1>
+          <h1>
+            Projects
+            <img src="/src/assets/sparkles.png" className="heading-icon" alt="" aria-hidden="true" />
+          </h1>
           <p>Gallery view of my work.</p>
+
+          <div className="filter-container">
+            {['All', 'React', 'AI', 'Node.js', 'TypeScript'].map(filter => (
+              <button
+                key={filter}
+                className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+
+          <div className="projects-grid">
+            {filteredProjects.map(project => (
+              <div key={project.id} className="project-card" onClick={() => setSelectedProject(project)}>
+                <div className="project-card-top" style={{ backgroundColor: project.color }}></div>
+                <div className="project-card-bottom">
+                  <h3>{project.title}</h3>
+                  <p className="project-card-desc">{project.description}</p>
+                  <div className="project-tags">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="project-tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section
@@ -223,6 +263,74 @@ function App() {
           <p>Get in touch with me.</p>
         </section>
       </main>
+
+      {/* project details modal */}
+      {selectedProject && (
+        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+          <div className="modal-content project-modal-container" onClick={(e) => e.stopPropagation()}>
+            <div className="project-modal-hero" style={{ backgroundColor: selectedProject.color }}></div>
+            <div className="project-modal-body">
+              <div className="project-modal-header">
+                <h2>{selectedProject.title}</h2>
+                <button className="modal-close" onClick={() => setSelectedProject(null)}>
+                  <X size={16} />
+                </button>
+              </div>
+              
+              <div className="project-modal-content-scroll">
+                <p className="project-modal-desc">
+                  {selectedProject.details.description || selectedProject.description}
+                </p>
+
+                {selectedProject.details.whatIDid && selectedProject.details.whatIDid.length > 0 && (
+                  <div className="project-modal-section">
+                    <h4>What I did:</h4>
+                    <ul>
+                      {selectedProject.details.whatIDid.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {selectedProject.details.keyFeatures && selectedProject.details.keyFeatures.length > 0 && (
+                  <div className="project-modal-section">
+                    <h4>Key Features:</h4>
+                    <ul>
+                      {selectedProject.details.keyFeatures.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div className="project-tags project-modal-tags">
+                  {selectedProject.tags.map((tag, i) => (
+                    <span key={i} className="project-tag">{tag}</span>
+                  ))}
+                </div>
+
+                <div className="project-modal-actions">
+                  <a href={selectedProject.liveLink} target="_blank" rel="noopener noreferrer" className="btn-primary project-live-btn">
+                    View Live
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '6px' }}>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                  <a href={selectedProject.githubLink} target="_blank" rel="noopener noreferrer" className="btn-secondary project-github-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* sky images modal overlay */}
       {isSkyModalOpen && (
