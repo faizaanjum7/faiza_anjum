@@ -6,7 +6,7 @@
 
 .main-content {
   flex: 1;
-  padding: 60px 80px;
+  padding: 60px 50px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -190,8 +190,8 @@
 }
 
 .doodle-star-2 {
-  bottom: 0px;
-  left: 20%;
+  bottom: -20px;
+  left: 5%;
   width: 35px;
   animation-delay: 0.5s;
 }

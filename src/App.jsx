@@ -193,7 +193,7 @@ function App() {
         >
           <h1>
             Projects
-            <img src="/src/assets/sparkles.png" className="heading-icon" alt="" aria-hidden="true" />
+            <img src="/src/assets/folder (1).png" className="heading-icon" alt="" aria-hidden="true" />
           </h1>
           <p>Gallery view of my work.</p>
 
