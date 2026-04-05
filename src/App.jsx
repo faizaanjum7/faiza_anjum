@@ -23,10 +23,9 @@ const ToggleBlock = ({ title, children, defaultOpen = false }) => {
     </div>
   );
 };
-import './App.css';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
   const [isSkyModalOpen, setIsSkyModalOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
@@ -214,10 +213,10 @@ function App() {
               <div key={project.id} className="project-card" onClick={() => setSelectedProject(project)}>
                 <div className="project-card-top" style={{ backgroundColor: project.color }}>
                   {(project.imageLight || project.imageDark) && (
-                    <img 
-                      src={isDarkMode ? (project.imageDark || project.imageLight) : (project.imageLight || project.imageDark)} 
-                      alt={project.title} 
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    <img
+                      src={isDarkMode ? (project.imageDark || project.imageLight) : (project.imageLight || project.imageDark)}
+                      alt={project.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                   )}
                 </div>
@@ -278,10 +277,10 @@ function App() {
           <div className="modal-content project-modal-container" onClick={(e) => e.stopPropagation()}>
             <div className="project-modal-hero" style={{ backgroundColor: selectedProject.color }}>
               {(selectedProject.imageLight || selectedProject.imageDark) && (
-                <img 
-                  src={isDarkMode ? (selectedProject.imageDark || selectedProject.imageLight) : (selectedProject.imageLight || selectedProject.imageDark)} 
-                  alt={selectedProject.title} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                <img
+                  src={isDarkMode ? (selectedProject.imageDark || selectedProject.imageLight) : (selectedProject.imageLight || selectedProject.imageDark)}
+                  alt={selectedProject.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               )}
             </div>
@@ -292,7 +291,7 @@ function App() {
                   <X size={16} />
                 </button>
               </div>
-              
+
               <div className="project-modal-content-scroll">
                 <p className="project-modal-desc">
                   {selectedProject.details.description || selectedProject.description}

@@ -412,7 +412,7 @@
   }
 }
 
-/* Projects Section */
+/* projects section */
 .filter-container {
   display: flex;
   gap: 8px;
@@ -514,7 +514,7 @@
   font-weight: 500;
 }
 
-/* Project Modal Overrides */
+/* project modal overrides */
 .project-modal-container {
   padding: 0;
   max-width: 650px;
@@ -587,7 +587,8 @@
   margin-top: 16px;
 }
 
-.project-live-btn, .project-github-btn {
+.project-live-btn,
+.project-github-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;

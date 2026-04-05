@@ -7,8 +7,8 @@ export const projectsData = [
     color: "#e6eaf5",
     imageLight: "/src/assets/personal_portfolio_light.webp",
     imageDark: "/src/assets/personal_portfolio_dark.webp",
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/faizaanjum7/portfolio_personal",
+    liveLink: "https://faiza-anjum-portfolio.vercel.app/",
     details: {
       description: "",
       whatIDid: [
@@ -31,8 +31,8 @@ export const projectsData = [
     color: "#e8f4ec",
     imageLight: "/src/assets/shms_light.webp",
     imageDark: "/src/assets/shms_dark.webp",
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/faizaanjum7/SHMS",
+    liveLink: "https://shms-latest-app.vercel.app/",
     details: {
       description: "A full-stack system built to streamline hospital operations including patient management, appointments, and workflow handling.",
       whatIDid: [
@@ -58,8 +58,8 @@ export const projectsData = [
     color: "#f6ede4",
     imageLight: "/src/assets/lms_light.webp",
     imageDark: "/src/assets/lms_dark.webp",
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/faizaanjum7/Next-Gen-LMS",
+    liveLink: "https://lms-app-latest.vercel.app/",
     details: {
       description: "",
       whatIDid: [
@@ -86,7 +86,7 @@ export const projectsData = [
     imageLight: "/src/assets/tedxgprec.webp",
     imageDark: "/src/assets/tedxgprec.webp",
     githubLink: "#",
-    liveLink: "#",
+    liveLink: "https://tedxgprec.in/",
     details: {
       description: "",
       whatIDid: [
@@ -109,8 +109,8 @@ export const projectsData = [
     color: "#f3e8e8",
     imageLight: "/src/assets/pomodoro_2.webp",
     imageDark: "/src/assets/pomodoro_1.webp",
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/faizaanjum7/pomodoro-app",
+    liveLink: "https://pomodoroapp-by-faiza.vercel.app/",
     details: {
       description: "",
       whatIDid: [
@@ -134,8 +134,8 @@ export const projectsData = [
     color: "#e2f2f2",
     imageLight: "/src/assets/skylar_light.webp",
     imageDark: "/src/assets/skylar_dark.webp",
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/faizaanjum7/productivityApp",
+    liveLink: "https://skylarfocus-app.vercel.app/",
     details: {
       description: "",
       whatIDid: [
@@ -159,7 +159,7 @@ export const projectsData = [
     color: "#e6eaf5",
     imageLight: null,
     imageDark: null,
-    githubLink: "#",
+    githubLink: "https://github.com/faizaanjum7/Faiza_Anjum",
     liveLink: "#",
     details: {
       description: "",
@@ -178,8 +178,8 @@ export const projectsData = [
     color: "#e8f4ec",
     imageLight: "/src/assets/jobapplication.webp",
     imageDark: "/src/assets/jobapplication.webp",
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/faizaanjum7/applicationform",
+    liveLink: "https://faizaanjum7.github.io/applicationform/",
     details: {
       description: "",
       whatIDid: [
@@ -202,8 +202,8 @@ export const projectsData = [
     color: "#f6ede4",
     imageLight: "/src/assets/resume.webp",
     imageDark: "/src/assets/resume.webp",
-    githubLink: "#",
-    liveLink: "#",
+    githubLink: "https://github.com/faizaanjum7/resume",
+    liveLink: "https://faizaanjum7.github.io/resume/",
     details: {
       description: "",
       whatIDid: [
