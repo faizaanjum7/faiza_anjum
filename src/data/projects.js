@@ -1,3 +1,18 @@
+import personalfoliolight from '../assets/personal_portfolio_light.webp';
+import personalfoliodark from '../assets/personal_portfolio_dark.webp';
+import shmslight from '../assets/shms_light.webp';
+import shmsdark from '../assets/shms_dark.webp';
+import lmslight from '../assets/lms_light.webp';
+import lmsdark from '../assets/lms_dark.webp';
+import tedxgprec from '../assets/tedxgprec.webp';
+import pomodorolight from '../assets/pomodoro_2.webp';
+import pomodorodark from '../assets/pomodoro_1.webp';
+import skylarlight from '../assets/skylar_light.webp';
+import skylardark from '../assets/skylar_dark.webp';
+import jobapp from '../assets/jobapplication.webp';
+import resume from '../assets/resume.webp';
+
+
 export const projectsData = [
   {
     id: 1,
@@ -5,8 +20,8 @@ export const projectsData = [
     description: "Personal portfolio built using React, focusing on interactive UI, animation-driven design, and enhanced user experience.",
     tags: ["React", "Frontend"],
     color: "#e6eaf5",
-    imageLight: "/src/assets/personal_portfolio_light.webp",
-    imageDark: "/src/assets/personal_portfolio_dark.webp",
+    imageLight: { personalfoliolight },
+    imageDark: { personalfoliodark },
     githubLink: "https://github.com/faizaanjum7/portfolio_personal",
     liveLink: "https://faiza-anjum-portfolio.vercel.app/",
     details: {
@@ -29,8 +44,8 @@ export const projectsData = [
     description: "Full-stack hospital management system designed to manage patients, appointments, and hospital workflows.",
     tags: ["React", "Node.js", "Firebase", "Team Lead"],
     color: "#e8f4ec",
-    imageLight: "/src/assets/shms_light.webp",
-    imageDark: "/src/assets/shms_dark.webp",
+    imageLight: { shmslight },
+    imageDark: { shmsdark },
     githubLink: "https://github.com/faizaanjum7/SHMS",
     liveLink: "https://shms-latest-app.vercel.app/",
     details: {
@@ -56,8 +71,8 @@ export const projectsData = [
     description: "Learning management system designed for structured learning, personalized content delivery, and real-world usability.",
     tags: ["React", "Next.js", "AI", "Figma"],
     color: "#f6ede4",
-    imageLight: "/src/assets/lms_light.webp",
-    imageDark: "/src/assets/lms_dark.webp",
+    imageLight: { lmslight },
+    imageDark: { lmsdark },
     githubLink: "https://github.com/faizaanjum7/Next-Gen-LMS",
     liveLink: "https://lms-app-latest.vercel.app/",
     details: {
@@ -83,8 +98,8 @@ export const projectsData = [
     description: "Official event website developed to showcase speakers, theme, and event flow with a focus on responsive and engaging design.",
     tags: ["HTML", "CSS", "JS"],
     color: "#eedbee",
-    imageLight: "/src/assets/tedxgprec.webp",
-    imageDark: "/src/assets/tedxgprec.webp",
+    imageLight: { tedxgprec },
+    imageDark: { tedxgprec },
     githubLink: "",
     liveLink: "https://tedxgprec.in/",
     details: {
@@ -107,8 +122,8 @@ export const projectsData = [
     description: "Productivity application combining a customizable pomodoro timer with task management for structured work sessions.",
     tags: ["React", "LocalStorage"],
     color: "#f3e8e8",
-    imageLight: "/src/assets/pomodoro_2.webp",
-    imageDark: "/src/assets/pomodoro_1.webp",
+    imageLight: { pomodorolight },
+    imageDark: { pomodorodark },
     githubLink: "https://github.com/faizaanjum7/pomodoro-app",
     liveLink: "https://pomodoroapp-by-faiza.vercel.app/",
     details: {
@@ -132,8 +147,8 @@ export const projectsData = [
     description: "AI-assisted productivity application designed to generate structured or flexible daily workflows based on user input.",
     tags: ["React", "TypeScript", "AI"],
     color: "#e2f2f2",
-    imageLight: "/src/assets/skylar_light.webp",
-    imageDark: "/src/assets/skylar_dark.webp",
+    imageLight: { skylarlight },
+    imageDark: { skylardark },
     githubLink: "https://github.com/faizaanjum7/productivityApp",
     liveLink: "https://skylarfocus-app.vercel.app/",
     details: {
@@ -176,8 +191,8 @@ export const projectsData = [
     description: "Web-based application form built to handle user inputs with validation and interactive elements.",
     tags: ["HTML", "CSS", "JS"],
     color: "#e8f4ec",
-    imageLight: "/src/assets/jobapplication.webp",
-    imageDark: "/src/assets/jobapplication.webp",
+    imageLight: { jobapp },
+    imageDark: { jobapp },
     githubLink: "https://github.com/faizaanjum7/applicationform",
     liveLink: "https://faizaanjum7.github.io/applicationform/",
     details: {
@@ -200,8 +215,8 @@ export const projectsData = [
     description: "Static resume website focused on clean layout and structured content presentation.",
     tags: ["HTML", "CSS"],
     color: "#f6ede4",
-    imageLight: "/src/assets/resume.webp",
-    imageDark: "/src/assets/resume.webp",
+    imageLight: { resume },
+    imageDark: { resume },
     githubLink: "https://github.com/faizaanjum7/resume",
     liveLink: "https://faizaanjum7.github.io/resume/",
     details: {
