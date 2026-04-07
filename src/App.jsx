@@ -5,7 +5,10 @@ import doodleStars from './assets/doodle-stars.png';
 import shining from './assets/shining.png';
 import star2 from './assets/star (2).png';
 import { projectsData } from './data/projects';
+import emailjs from '@emailjs/browser';
 import './App.css';
+
+import mailWithStar from './assets/mail-with-star.png';
 
 const ToggleBlock = ({ title, children, defaultOpen = false }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -30,6 +33,7 @@ function App() {
   const [isSkyModalOpen, setIsSkyModalOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isMessageSent, setIsMessageSent] = useState(false);
 
   const sectionRefs = useRef({});
 
@@ -69,6 +73,26 @@ function App() {
 
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => !prev);
+  };
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      e.target,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+      .then((result) => {
+        console.log('SUCCESS!', result.text);
+        setIsMessageSent(true);
+        e.target.reset();
+        setTimeout(() => setIsMessageSent(false), 3000);
+      }, (error) => {
+        console.log('FAILED...', error.text);
+        alert('Failed to send message. Please try again.');
+      });
   };
 
   return (
@@ -266,7 +290,10 @@ function App() {
           ref={(el) => (sectionRefs.current['contact'] = el)}
           className="page-section contact-section"
         >
-          <h1>Contact</h1>
+          <h1>
+            Contact
+            <img src={mailWithStar} className="heading-icon" alt="" aria-hidden="true" />
+          </h1>
           <p>Get in touch.</p>
           <div className="contact-container">
             <div className="contact-links">
@@ -284,12 +311,12 @@ function App() {
               </a>
             </div>
 
-            <div className="contact-form">
-              <input type="text" placeholder="Name" className="contact-input" />
-              <input type="email" placeholder="Email" className="contact-input" />
-              <textarea placeholder="Message" className="contact-textarea" rows="4"></textarea>
-              <button className="btn-primary send-btn">Send Message</button>
-            </div>
+            <form className="contact-form" onSubmit={handleSendMessage}>
+              <input type="text" name="name" placeholder="Name" className="contact-input" required />
+              <input type="email" name="email" placeholder="Email" className="contact-input" required />
+              <textarea name="message" placeholder="Message" className="contact-textarea" rows="4" required></textarea>
+              <button type="submit" className="btn-primary send-btn">Send Message</button>
+            </form>
           </div>
         </section>
 
@@ -400,6 +427,13 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+      )}
+      {/* message sent popup */}
+      {isMessageSent && (
+        <div className="message-toast">
+          <Mail size={18} />
+          <span>Message sent! :)</span>
         </div>
       )}
     </div>
