@@ -9,6 +9,7 @@ import emailjs from '@emailjs/browser';
 import './App.css';
 
 import mailWithStar from './assets/mail-with-star.png';
+import faiza from './assets/me.jpg';
 
 const ToggleBlock = ({ title, children, defaultOpen = false }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -116,7 +117,7 @@ function App() {
 
           <div className="home-content">
             <div className="avatar-container">
-              <img src="/src/assets/me.jpg" alt="Faiza Anjum" className="avatar" />
+              <img src={faiza} alt="Faiza Anjum" className="avatar" />
             </div>
             <div className="home-info">
               <h1 className="home-name">Faiza Anjum</h1>
