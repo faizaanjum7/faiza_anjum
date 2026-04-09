@@ -123,11 +123,18 @@ function App() {
   const handleSendMessage = (e) => {
     e.preventDefault();
 
+    if (!import.meta.env.VITE_EMAILJS_SERVICE_ID) {
+      alert('Error: Environment variables (.env) are not loaded.\n\nYou must completely RESTART your terminal (close it or press Ctrl+C, then run "npm run dev" again) to load new variables!');
+      return;
+    }
+
     emailjs.sendForm(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       e.target,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      }
     )
       .then((result) => {
         console.log('SUCCESS!', result.text);
@@ -135,8 +142,8 @@ function App() {
         e.target.reset();
         setTimeout(() => setIsMessageSent(false), 3000);
       }, (error) => {
-        console.log('FAILED...', error.text);
-        alert('Failed to send message. Please try again.');
+        console.log('FAILED...', error);
+        alert(`Failed to send message: ${error?.text || 'Unknown Error'}`);
       });
   };
 
