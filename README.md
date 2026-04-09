@@ -1,18 +1,46 @@
-# React + Vite
+# 💼 portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+a modern, notion-inspired portfolio built to showcase my projects, skills, and experience in a clean and structured way.
 
-Currently, two official plugins are available:
+🔗 live: https://faiza-anjum.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ technologies
 
-## React Compiler
+- react.js  
+- javascript  
+- css  
+- emailjs  
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🚀 features
 
-Note: This will impact Vite dev & build performances.
+- notion-inspired clean ui  
+- project showcase with interactive cards  
+- blog / case study section  
+- dark/light mode toggle  
+- contact form with email integration  
+- responsive design  
 
-## Expanding the ESLint configuration
+## 🎞️ preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![preview](./preview.gif)
+
+## 📍 the process
+
+this portfolio was designed to be more structured and professional compared to my personal portfolio.
+
+i focused on clarity, readability, and organization, inspired by notion-style layouts. the goal was to create a space where projects, skills, and experience are easy to navigate while still maintaining a clean visual design.
+
+i built the entire application using react and structured components to keep the layout scalable and maintainable.
+
+## 📚 what i learned
+
+- structuring large frontend applications  
+- designing clean and readable ui layouts  
+- managing multiple sections and navigation  
+- integrating email services for contact forms  
+
+## ⚠️ usage
+
+this project is my portfolio.
+
+you may explore and take inspiration, but please avoid directly copying the design or code.
