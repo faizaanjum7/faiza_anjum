@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Sidebar from './components/Sidebar';
-import { ArrowDown, ChevronRight, X, Mail, Linkedin, Github, GraduationCap, Briefcase, Award, Calendar, FileText, ArrowRight, Figma } from 'lucide-react';
+import { ArrowDown, ChevronRight, X, Mail, Linkedin, Github, GraduationCap, Briefcase, Award, Calendar, FileText, ArrowRight, Figma, Image as ImageIcon } from 'lucide-react';
 import doodleStars from './assets/doodle-stars.png';
 import shining from './assets/shining.png';
 import star2 from './assets/star (2).png';
@@ -649,15 +649,17 @@ function App() {
                       {section.content}
                     </div>
                     {section.images && section.images.length > 0 && (
-                      <div className="blog-section-images">
+                      <div className="blog-section-gallery" style={{ marginTop: '16px', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                         {section.images.map((img, i) => (
-                          <img 
+                          <button 
                             key={i} 
-                            src={img} 
-                            loading="lazy" 
-                            alt={`${section.title} ${i + 1}`} 
+                            className="btn-secondary"
                             onClick={() => setFullScreenImage(img)}
-                          />
+                            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 12px' }}
+                          >
+                            <ImageIcon size={16} />
+                            <span>View {section.images.length > 1 ? `Image ${i + 1}` : 'Image'}</span>
+                          </button>
                         ))}
                       </div>
                     )}
