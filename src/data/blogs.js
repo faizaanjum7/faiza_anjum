@@ -1,3 +1,10 @@
+import loginPage from '../assets/loginpage.webp';
+import aihrPage from '../assets/aihrpage.webp';
+import dashboardPage from '../assets/dashboardpage.webp';
+import coursePage from '../assets/coursepage.webp';
+import quizzesPage from '../assets/quizzespage.webp';
+import reportsPage from '../assets/reportspage.webp';
+
 export const blogData = [
   {
     id: 1,
@@ -7,7 +14,7 @@ export const blogData = [
     description: 'A modern learning management system that uses AI to personalize content based on user pace, knowledge level, and learning behavior.',
     tags: ['UI/UX', 'Figma', 'EdTech', 'AI'],
     modalDetails: {
-      dateRange: 'Dec 2025 - Feb 2026',
+      dateRange: 'December 15, 2025',
       role: 'UI Team Lead',
       duration: '8-10 weeks',
       intro: 'The goal was to design a next-generation Learning Management System (LMS) that moves beyond static content delivery and introduces AI-driven personalization based on user pace, knowledge level, and learning behavior.\n\nExisting LMS platforms are largely generic, offering the same structure and content to all users, regardless of individual differences. This creates inefficiencies in learning and reduces engagement.',
@@ -43,7 +50,8 @@ export const blogData = [
         },
         {
           title: 'Outcome',
-          content: '• Fully designed LMS platform with end-to-end user flow\n• Functional frontend built in React\n• A scalable concept for AI-driven personalized learning'
+          content: '• Fully designed LMS platform with end-to-end user flow\n• Functional frontend built in React\n• A scalable concept for AI-driven personalized learning',
+          images: [loginPage, aihrPage, dashboardPage, coursePage, quizzesPage, reportsPage]
         }
       ]
     }

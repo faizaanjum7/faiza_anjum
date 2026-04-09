@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Sidebar from './components/Sidebar';
-import { ArrowDown, ChevronRight, X, Mail, Linkedin, Github, GraduationCap, Briefcase, Award, Calendar, FileText, ArrowRight } from 'lucide-react';
+import { ArrowDown, ChevronRight, X, Mail, Linkedin, Github, GraduationCap, Briefcase, Award, Calendar, FileText, ArrowRight, Figma } from 'lucide-react';
 import doodleStars from './assets/doodle-stars.png';
 import shining from './assets/shining.png';
 import star2 from './assets/star (2).png';
@@ -21,6 +21,7 @@ import sky4 from './assets/sky4.webp';
 import moon from './assets/moon.webp';
 import resumePdf from './assets/Faiza_Anjum.pdf';
 import codeIcon from './assets/code.png';
+import googleDocsIcon from './assets/google-docs.png';
 
 
 const ToggleBlock = ({ title, children, defaultOpen = false }) => {
@@ -49,6 +50,7 @@ function App() {
   const [isMessageSent, setIsMessageSent] = useState(false);
   const [activeBlogFilter, setActiveBlogFilter] = useState('All');
   const [selectedBlog, setSelectedBlog] = useState(null);
+  const [fullScreenImage, setFullScreenImage] = useState(null);
 
   const sectionRefs = useRef({});
 
@@ -326,7 +328,10 @@ function App() {
           ref={(el) => (sectionRefs.current['blog'] = el)}
           className="page-section blog-section"
         >
-          <h1>Blog / Case Studies</h1>
+          <h1>
+            Blog / Case Studies
+            <img src={googleDocsIcon} className="heading-icon" alt="" aria-hidden="true" />
+          </h1>
           <p>Thoughts, learnings, and design case studies.</p>
 
           <div className="filter-container">
@@ -345,7 +350,7 @@ function App() {
             {filteredBlogs.map(blog => (
               <div key={blog.id} className="blog-card" onClick={() => setSelectedBlog(blog)}>
                 <div className="blog-card-type">
-                  <FileText size={14} />
+                  {blog.type === 'Case Study' ? <Figma size={14} /> : <FileText size={14} />}
                   <span>{blog.type.toUpperCase()}</span>
                 </div>
                 <h3 className="blog-card-title">{blog.title}</h3>
@@ -357,7 +362,7 @@ function App() {
                     <span>{blog.date}</span>
                   </div>
                   <div className="blog-card-meta-item">
-                    <FileText size={14} /> 
+                    {blog.type === 'Case Study' ? <Figma size={14} /> : <FileText size={14} />} 
                     <span>{blog.type}</span>
                   </div>
                 </div>
@@ -594,7 +599,7 @@ function App() {
           <div className="modal-content blog-modal-container" onClick={(e) => e.stopPropagation()}>
             <div className="blog-modal-header-top">
               <span className="blog-modal-header-type">
-                <FileText size={14} />
+                {selectedBlog.type === 'Case Study' ? <Figma size={14} /> : <FileText size={14} />}
                 {selectedBlog.type.toUpperCase()}
               </span>
               <button className="modal-close" onClick={() => setSelectedBlog(null)}>
@@ -643,6 +648,19 @@ function App() {
                     <div className="blog-section-content" style={{ whiteSpace: 'pre-line' }}>
                       {section.content}
                     </div>
+                    {section.images && section.images.length > 0 && (
+                      <div className="blog-section-images">
+                        {section.images.map((img, i) => (
+                          <img 
+                            key={i} 
+                            src={img} 
+                            loading="lazy" 
+                            alt={`${section.title} ${i + 1}`} 
+                            onClick={() => setFullScreenImage(img)}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
                 
@@ -666,6 +684,21 @@ function App() {
           <span>Message sent! :)</span>
         </div>
       )}
+      {/* fullscreen image popup */}
+      {fullScreenImage && (
+        <div className="fullscreen-overlay" onClick={() => setFullScreenImage(null)}>
+          <button className="fullscreen-close" onClick={() => setFullScreenImage(null)}>
+            <X size={24} />
+          </button>
+          <img 
+            src={fullScreenImage} 
+            alt="Fullscreen View" 
+            className="fullscreen-image" 
+            onClick={(e) => e.stopPropagation()} 
+          />
+        </div>
+      )}
+
     </div>
   );
 }
